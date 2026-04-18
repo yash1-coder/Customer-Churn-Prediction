@@ -37,3 +37,6 @@ data/processed/*
 # Reports / exports
 reports/*
 !reports/.gitkeep
+
+# Model artifacts
+artifacts/
