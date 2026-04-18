@@ -2,7 +2,11 @@
 
 ## Repo Goal
 
-This repository is a portfolio-grade project intended for recruiter review and interview discussion.
+This repository is a portfolio-grade customer churn prediction project for recruiter review and interview discussion.
+
+## Project Objective
+
+Predict customer churn and identify the strongest churn drivers so a business can take targeted retention actions.
 
 ## Working Rules
 
