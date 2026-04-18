@@ -1,0 +1,7 @@
+flowchart TD
+  A[Plan: problem, label, constraints] --> B[Explore in notebooks]
+  B --> C[Implement in src: ingest -> features -> model -> eval]
+  C --> D[Tests + types + lint]
+  D --> E[Docs: status, architecture, evaluation protocol]
+  E --> F[CI green]
+  F --> G[Report / demo in app or reports]

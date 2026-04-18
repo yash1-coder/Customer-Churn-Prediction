@@ -1,0 +1,13 @@
+.venv/
+venv/
+data/raw/
+data/interim/
+data/processed/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+htmlcov/
+dist/
+build/
+
