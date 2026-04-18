@@ -43,11 +43,16 @@ README documents install, train, evaluate, and dashboard commands. All docs in s
 - M4: evaluation metrics, SHAP explainability.
 - M5: README, docs sync, quality gates, Streamlit dashboard.
 
+### M6 — Dataset ingestion and EDA
+
+**Status:** In progress (skeleton created).
+
+`data.load.load_telco_churn` convenience loader with schema validation and fallback filenames. EDA notebook skeleton at `notebooks/01_eda.ipynb` with 8 sections (setup, load, missing values, duplicates, target balance, distributions, correlations, observations). Notebook needs to be run against the real dataset to fill in findings.
+
 ## Potential extensions
 
 - XGBoost or gradient boosting challenger model.
 - Hyperparameter tuning (Optuna or GridSearchCV).
-- EDA notebook in `notebooks/`.
 - Threshold analysis and calibration.
 - Docker containerisation.
 

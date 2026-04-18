@@ -1,14 +1,15 @@
 # Status
 
-## Milestone overview (5)
+## Milestone overview (6)
 
-| ID | Focus                             | State    |
-| -- | --------------------------------- | -------- |
-| M1 | Data contract + ingest validation | Complete |
-| M2 | Feature pipeline + splits         | Complete |
-| M3 | Baseline train + artifacts        | Complete |
-| M4 | Evaluation + report outputs       | Complete |
-| M5 | README/docs sync + quality gates  | Complete |
+| ID | Focus                             | State       |
+| -- | --------------------------------- | ----------- |
+| M1 | Data contract + ingest validation | Complete    |
+| M2 | Feature pipeline + splits         | Complete    |
+| M3 | Baseline train + artifacts        | Complete    |
+| M4 | Evaluation + report outputs       | Complete    |
+| M5 | README/docs sync + quality gates  | Complete    |
+| M6 | Dataset ingestion + EDA           | In progress |
 
 ## M0 — Repository scaffold (complete)
 
@@ -52,6 +53,12 @@
 - README: quickstart, dataset, train, dashboard, tests, quality gates, docs links.
 - Streamlit dashboard: `app/dashboard.py` with metrics, SHAP, and single-customer prediction.
 - All quality gates passing: Ruff, Black, Mypy, Pytest.
+
+## M6 — Dataset ingestion + EDA (in progress)
+
+- `data.load.load_telco_churn`: convenience loader with default path resolution (tries canonical filename then `churn.csv`) and automatic schema validation.
+- `notebooks/01_eda.ipynb`: 8-section skeleton covering setup, data loading, missing values, duplicates, target balance, feature distributions, correlations, and observations.
+- Notebook needs to be run against the real CSV to produce findings.
 
 ## Blockers / decisions
 
