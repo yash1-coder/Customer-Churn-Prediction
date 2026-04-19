@@ -56,8 +56,10 @@
 
 ## M6 — Dataset ingestion + EDA (in progress)
 
-- `data.load.load_telco_churn`: convenience loader with default path resolution (tries canonical filename then `churn.csv`) and automatic schema validation.
+- `data.load.load_telco_churn`: convenience loader with default path resolution (tries canonical filename then `churn.csv`), schema validation, empty-dataset guard, and configurable target column check.
+- `data.load.load_raw_csv`: hardened with empty-dataset check (`ValueError` on zero rows).
 - `notebooks/01_eda.ipynb`: 8-section skeleton covering setup, data loading, missing values, duplicates, target balance, feature distributions, correlations, and observations.
+- Tests: `tests/test_load.py` expanded to 7 tests (empty CSV, fixture loading, custom target, bad target, skip target check).
 - Notebook needs to be run against the real CSV to produce findings.
 
 ## Blockers / decisions
