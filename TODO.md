@@ -1,6 +1,6 @@
 # TODO
 
-## Milestones (6)
+## Milestones (7)
 
 ### M1 — Data contract, label, horizon, and ingest validation
 
@@ -44,15 +44,37 @@ README documents install, train, evaluate, and dashboard commands. All docs in s
 - M5: README, docs sync, quality gates, Streamlit dashboard.
 - M6: dataset ingestion and EDA completed with real data execution and finalized observations.
 
+## Next
+
+- **M7**: Implement `train_challenger()` in `src/models/train.py` (XGBoost with default hyperparams on existing feature matrix).
+
 ### M6 — Dataset ingestion and EDA
 
 **Status:** Complete.
 
 Real dataset loaded from `data/raw/churn.csv` and notebook executed. `notebooks/01_eda.ipynb` now includes completed EDA outputs and final observations: shape 7,043 x 21, churn Yes 26.54% (1,869), churn No 73.46% (5,174), duplicates 0, and 11 hidden missing values in `TotalCharges` after numeric coercion. Preprocessing-relevant implications are documented.
 
+### M7 — XGBoost challenger model
+
+**Status:** Planned.
+
+**Scope:** Add `train_challenger()` to `models.train`, extend `run_train.py` to run both baseline and challenger on the same split, save challenger artifacts (`artifacts/challenger_xgb.pkl`, `reports/challenger_metrics.json`, `reports/model_comparison.json`), generate SHAP for XGBoost, update docs with comparison table.
+
+**Acceptance criteria:**
+- [ ] recall >= 0.60 (up from 0.5668 baseline)
+- [ ] roc_auc >= 0.85 (at least matches baseline 0.8418)
+- [ ] f1 >= 0.62 (recall gain not from precision collapse)
+- [ ] `reports/model_comparison.json` exists with both models' metrics
+- [ ] SHAP summary generated for XGBoost challenger
+- [ ] `docs/status.md` and `docs/evaluation.md` updated with comparison table
+- [ ] Ruff, Black, Mypy, Pytest pass
+
+**Files to edit:** `src/models/train.py`, `src/run_train.py`, `docs/status.md`, `docs/evaluation.md`, `TODO.md`, `README.md`.
+
+**Not in scope:** hyperparameter tuning, threshold analysis, dashboard changes, new features.
+
 ## Potential extensions
 
-- XGBoost or gradient boosting challenger model.
 - Hyperparameter tuning (Optuna or GridSearchCV).
 - Threshold analysis and calibration.
 - Docker containerisation.

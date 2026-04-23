@@ -6,7 +6,9 @@ flowchart TD
     E --> F[Feature Engineering]
     F --> G[Train/Test Split]
     G --> H[Baseline Model]
-    H --> I[Evaluation Metrics]
+    G --> H2[XGBoost Challenger]
+    H --> I[Evaluation & Comparison]
+    H2 --> I
     I --> J[SHAP Explainability]
     J --> K[Streamlit Dashboard]
     K --> L[Docs and Polish]
