@@ -9,7 +9,7 @@
 | M3 | Baseline train + artifacts        | Complete    |
 | M4 | Evaluation + report outputs       | Complete    |
 | M5 | README/docs sync + quality gates  | Complete    |
-| M6 | Dataset ingestion + EDA           | In progress |
+| M6 | Dataset ingestion + EDA           | Complete    |
 
 ## M0 — Repository scaffold (complete)
 
@@ -54,13 +54,14 @@
 - Streamlit dashboard: `app/dashboard.py` with metrics, SHAP, and single-customer prediction.
 - All quality gates passing: Ruff, Black, Mypy, Pytest.
 
-## M6 — Dataset ingestion + EDA (in progress)
+## M6 — Dataset ingestion + EDA (complete)
 
 - `data.load.load_telco_churn`: convenience loader with default path resolution (tries canonical filename then `churn.csv`), schema validation, empty-dataset guard, and configurable target column check.
 - `data.load.load_raw_csv`: hardened with empty-dataset check (`ValueError` on zero rows).
-- `notebooks/01_eda.ipynb`: 8-section skeleton covering setup, data loading, missing values, duplicates, target balance, feature distributions, correlations, and observations.
-- Tests: `tests/test_load.py` expanded to 7 tests (empty CSV, fixture loading, custom target, bad target, skip target check).
-- Notebook needs to be run against the real CSV to produce findings.
+- Real dataset placed at `data/raw/churn.csv` and notebook executed end-to-end.
+- `notebooks/01_eda.ipynb` now contains executed outputs with real metrics and visuals (shape 7,043 x 21, churn Yes 26.54%, duplicates 0, hidden TotalCharges missing = 11 after coercion).
+- Final observations section is completed with concise preprocessing-relevant insights.
+- Tests: `tests/test_load.py` remains 7 tests (empty CSV, fixture loading, custom target, bad target, skip target check).
 
 ## Blockers / decisions
 

@@ -1,6 +1,6 @@
 # TODO
 
-## Milestones (5)
+## Milestones (6)
 
 ### M1 — Data contract, label, horizon, and ingest validation
 
@@ -42,12 +42,13 @@ README documents install, train, evaluate, and dashboard commands. All docs in s
 - M3: baseline model, training CLI, artifact persistence.
 - M4: evaluation metrics, SHAP explainability.
 - M5: README, docs sync, quality gates, Streamlit dashboard.
+- M6: dataset ingestion and EDA completed with real data execution and finalized observations.
 
 ### M6 — Dataset ingestion and EDA
 
-**Status:** In progress (skeleton created).
+**Status:** Complete.
 
-`data.load.load_telco_churn` convenience loader with schema validation and fallback filenames. EDA notebook skeleton at `notebooks/01_eda.ipynb` with 8 sections (setup, load, missing values, duplicates, target balance, distributions, correlations, observations). Notebook needs to be run against the real dataset to fill in findings.
+Real dataset loaded from `data/raw/churn.csv` and notebook executed. `notebooks/01_eda.ipynb` now includes completed EDA outputs and final observations: shape 7,043 x 21, churn Yes 26.54% (1,869), churn No 73.46% (5,174), duplicates 0, and 11 hidden missing values in `TotalCharges` after numeric coercion. Preprocessing-relevant implications are documented.
 
 ## Potential extensions
 
